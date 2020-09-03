@@ -1,0 +1,97 @@
+/*@font-face {
+    font-family: oswald;
+    src: url(/Html_basic_1/sprint03/fonts/Oswald-Regular.ttf);
+    font-weight: 900;
+}*/
+h1 {
+    color: rgb(76, 0, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+h3 {
+    font-family: "Roboto", sans-serif;
+}
+
+#bioHeader {
+    color: rgb(42, 157, 165) ;
+}
+
+#skilsHeader {
+    color: green ;
+    
+}
+
+.row {
+    color:  blue;
+    font-size: 30px;
+    font-family: 'Kodchasan', sans-serif;
+    border: 5px solid black;
+    padding: 20px; 
+    margin: 10px;
+    background-color: yellow;
+    /*text-transform: uppercase;*/
+     
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.img-div{
+    background-color: lightcyan;
+
+}
+
+.light{
+    background-color: aliceblue;
+}
+
+img {
+    width: 14.5%;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    box-shadow: 3px 3px 10px red;
+    
+}
+
+#info{
+    display: none;
+}
+#info-vissza{
+    display: none;
+}
+
+#i{
+    visibility: none;
+}
+/*#lista{
+    visibility: hidden;
+    margin-left: 20px;
+}*/
+
+#biztositokInput{
+    width: 220px;
+}
+/*#date{
+    visibility: hidden;
+    margin-left: 20px;
+}
+#tulaj{
+    visibility: hidden;
+    margin-left: 20px;
+}
+#gk{
+    visibility: hidden;
+    margin-left: 20px;
+}
+#elkuld{
+    visibility: hidden;
+    margin-left: 20px;
+}*/
+#kerdesek{
+    visibility: hidden;
+    margin-left: 20px;
+}
