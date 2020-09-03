@@ -1,0 +1,68 @@
+
+<?php
+// Start the session
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align:center">Kérlek jelentkezz be.
+                </h1>
+            </div>
+        </div>
+    </div>
+    <form>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4">
+                    <label for="emailInput">E-mail cím</label>
+                    <input id="emailInput" type="email" class="form-control" name="email">
+                    <small id="emailBiztositek" class="form-text text-muted">Az adatokat nem adjuk át senkinek.</small>
+                </div>
+                <div class="col-6"></div>
+                <div class="col-2">
+                    <div class="Tooltip">E-mail help
+                        <span id="emailHelp" class="Tooltiptext"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4">
+                    <label for="rendszamInput">Rendszám</label>
+                    <input id="rendszamInput" type="text" class="form-control" name="rendszam"
+                        onclick="rendszamHelpBe()" onmouseout="rendszamHelpKi()">
+                    <div class="Tooltip">
+                        <span id="rendszamInputHelp" class="rendszamTooltiptext"></span>
+                    </div>
+                </div>
+                <div class="col-6">
+                </div>
+                <div class="col-2">
+                    <div class="Tooltip">Rendszám help
+                        <span id="rendszamHelp" class="Tooltiptext"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="getDataBtn" type="submit" class="btn btn-primary">Bejelentkezés</span>
+    </form>
+    <script src="js/login.js"></script>
+    <!-- <script src="js/proba.js"></script> -->
+    <!-- <script src="js/adat.js"></script> -->
+</body>
+
+</html>

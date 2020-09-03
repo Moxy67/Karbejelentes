@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,16 +14,11 @@
 </head>
 
 <body>
+    <div id="elso">
     <div id="question" class="row">
-        <tr>
-            <div class="col-2"></div>
-            <div class="col-8">
-                <h1 class="bold">
-                    Van CASCO biztosításod?
-                </h1>
-            </div>
-            <div class="col-2"></div>
-        </tr>
+        <h1 class="bold">
+            Van CASCO biztosításod?
+        </h1>
     </div>
     <div>
         <div id="btns" class="row">
@@ -39,69 +37,134 @@
             </div>
         </div>
     </div>
-    <div>
-        <div id="info" class="row" name="tajekoztatomezo">
-            <tr>
-                <div class="col-4"></div>
-                <td>
-                    <div id="tajekoztato" class="info"></div>
-                </td>
-                <div class="col-4"></div>
-            </tr>
-        </div>
+</div>
+<div>
+    <span id="info" class="row" name="tajekoztatomezo">
+    </span>
+</div>
+<div>
+    <div id="emailInfo" class="row"></div>
+</div>
+<div>
+    <div id="info-vissza" class="row" name="tajekoztatomezo">
+        <tr>
+            <div class="col-4"></div>
+            <div id="vissza-gomb" class="col-4">
+                <span id="fooldal" class="btn btn-primary w-100">Ha akarsz itt vissza mehetsz a fő oldalra!
+                </span>
+            </div>
+            <div class="col-4"></div>
+        </tr>
     </div>
-    <div>
-        <div id="info-vissza" class="row" name="tajekoztatomezo">
-            <tr>
-                <div class="col-4"></div>
-                <div class="col-4">
-                    <span id="fooldal" class="btn btn-primary w-100">Ha akarsz itt vissza mehetsz a fő oldalra!
-                    </span>
+</div>
+
+<form id="kerdesek">
+    <div id="lista" class="form-group">
+        <div class="row">
+            <div class="col-10">
+                <h3 class="bold">
+                    Melyik biztosítónál van a CASCO biztosításod?
+                </h3>
+            </div>
+            <div class="col-2">
+                <div class="Tooltip">Help
+                    <span id="help" class="Tooltiptext"></span>
                 </div>
-                <div class="col-4"></div>
-            </tr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <select id="biztositokInput" name="biztosito" class="form-control">
+                </select>
+
+            </div>
+            <div class="col-2">
+                <span id="biztositoOk" class="btn btn-primary" onclick="dateTime()">"Tovább"</span>
+            </div>
+            <div class="col-6"></div>
         </div>
     </div>
-    <form id="kerdesek">
-        <div id="lista" class="form-group">
-            <h3 class="bold">
-                Melyik biztosítónál van a CASCO biztosításod?
-                <span id="help" class="btn btn-succes">Help</span>
-            </h3>
-            <select id="biztositokInput" name="biztositok-input" class="form-control">
-            </select>
-            
+    <div id="date" class="form-group">
+        <div class="row">
+            <div class="col-10">
+                <h3 class="bold">
+                    A baleset dátuma?
+                </h3>
+            </div>
+            <div class="col-2">
+                <div class="Tooltip">Help
+                    <span id="datumhelp" class="Tooltiptext"></span>
+                </div>
+            </div>
         </div>
-        <div id="date" class="form-group">
-            <h3 class="bold">
-                A baleset dátuma?
-                <span id="datumhelp" class="btn btn-succes">Help</span>
-            </h3>
-            <label for="party">
-                <input type="date" name="party" min="2019-04-01" max="2021-04-30">
-            </label>
+        <div class="row">
+            <div class="col-4">
+                <label for="baleset_datum">
+                    <input type="date" name="baleset_datum" id="datePickerId" class="form-control">
+                    <!-- <input type="date" name="baleset_datum" min="2019-04-01" max="2040-04-30" class="form-control"> -->
+                </label>
+            </div>
+            <div class="col-2">
+                <span id="datumOk" class="btn btn-primary" onclick="tulajdonos()">"Tovább"</span>
+            </div>
+            <div class="col-6"></div>
         </div>
-        <div id="tulaj" class="form-group">
-            <h3 class="bold">
-                A tulajdonos neve?
-                <span id="tulajhelp" class="btn btn-succes">Help</span>
-            </h3>
-            <input type="text">
+    </div>
+    <div id="tulaj" class="form-group">
+        <div class="row">
+            <div class="col-10">
+                <h3 class="bold">
+                    A saját gépkocsi tulajdonosának neve?
+                </h3>
+            </div>
+            <div class="col-2">
+                <div class="Tooltip">Help
+                    <span id="tulajhelp" class="Tooltiptext"></span>
+                </div>
+            </div>
         </div>
-        <div id="gk" class="form-group">
-            <h3 class="bold">
-                A gépkocsid típusa?
-                <span id="tipushelp" class="btn btn-succes">Help</span>
-            </h3>
-            <input type="text">
+        <div class="row">
+            <div class="col-4">
+                <input id="tulajInput" type="text" class="form-control" name="tulaj_neve">
+            </div>
+            <div class="col-2">
+                <span id="tulajOk" class="btn btn-primary" onclick="gk()">"Tovább"</span>
+            </div>
+            <div class="col-6"></div>
         </div>
-        <div id="elkuld" class="form-group">
-            <span>
-                <span type="submit" class="btn btn-primary">Adatok küldése</span>
-            </span>
+    </div>
+
+    <div id="gk" class="form-group">
+        <div class="row">
+            <div class="col-10">
+                <h3 class="bold">
+                    A gépkocsid típusa?
+                </h3>
+            </div>
+            <div class="col-2">
+                <div class="Tooltip">Help
+                    <span id="tipushelp" class="Tooltiptext"></span>
+                </div>
+            </div>
         </div>
-    </form>
-    <script src="js/main.js"></script>
+        <div class="row">
+            <div class="col-4">
+                <input id="gkInput" type="text" class="form-control" name="auto_tipus">
+            </div>
+            <div class="col-1"></div>
+            <div class="col-7"></div>
+        </div>
+    </div>
+    <div id="elkuld" class="form-group">
+        <p>
+            <span type="submit" class="btn btn-primary" onclick="getInputData()">Adatok küldése</span>
+        </p>
+    </div>
+</form>
+<!-- <div id="vissza-gomb" class="row"></div> -->
+<script src="js/main.js"></script>
+<!-- <script src="js/proba.js"></script> -->
+<!-- <script src="js/adat.js"></script> -->
 </body>
 
 </html>

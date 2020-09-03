@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felhasználók</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/92b1f3bd4c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <button id="getDataBtn" class="btn btn-block btn-primary">
+                    Get Users
+                </button>
+            </div>
+            <div class="col-2"></div>
+        </div>
+
+        <div class="row">
+            <!-- <div class="col-2"></div> -->
+            <!-- <div class="col-8"> -->
+            <table id="userTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Rendszam</th>
+                        <th>Email</th>
+                        <th>Biztosito</th>
+                        <th>Baleset_Datum</th>
+                        <th>Tulaj_Neve</th>
+                        <th>Auto_tipus</th>
+                        <th>Szerepelt</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <!-- </div> -->
+            <!-- <div class="col-2"></div> -->
+
+        </div>
+    </div>
+    <script src="js/felhaszn.js"></script>
+    <script src="js/login.js"></script>
+    <!-- <script src="js/proba.js"></script> -->
+    <script src="js/adat.js"></script>
+
+</body>
+
+</html>
